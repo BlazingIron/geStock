@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 28 Février 2020 à 14:05
+-- Généré le :  Mar 03 Mars 2020 à 12:41
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -42,9 +42,9 @@ CREATE TABLE `logs_connexions` (
 CREATE TABLE `produits` (
   `id` int(11) NOT NULL,
   `code_produit` varchar(16) NOT NULL,
-  `nom` varchar(32) NOT NULL,
+  `nom` varchar(64) NOT NULL,
   `detail` text NOT NULL,
-  `categorie` varchar(32) NOT NULL,
+  `categorie` varchar(64) NOT NULL,
   `quantite` int(11) NOT NULL,
   `prix_achat` float NOT NULL,
   `date_expiration` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -59,11 +59,11 @@ CREATE TABLE `produits` (
 
 CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
-  `nom` varchar(32) NOT NULL,
-  `prenom` varchar(32) NOT NULL,
-  `email` varchar(64) NOT NULL,
-  `mot_de_passe` varchar(32) NOT NULL,
-  `type` varchar(16) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL,
+  `type` varchar(64) NOT NULL,
   `actif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -75,7 +75,8 @@ CREATE TABLE `utilisateurs` (
 -- Index pour la table `logs_connexions`
 --
 ALTER TABLE `logs_connexions`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_utilisateur` (`id_utilisateur`);
 
 --
 -- Index pour la table `produits`
@@ -110,6 +111,16 @@ ALTER TABLE `produits`
 --
 ALTER TABLE `utilisateurs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `logs_connexions`
+--
+ALTER TABLE `logs_connexions`
+  ADD CONSTRAINT `logs_connexions_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
