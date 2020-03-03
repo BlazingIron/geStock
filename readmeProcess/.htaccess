@@ -1,0 +1,5 @@
+
+AuthName "Restricted area"
+AuthType Basic
+AuthUserFile "E:/Programmes/UwAmp/www/geStock/readmeProcess/.htpasswd"
+Require valid-user
