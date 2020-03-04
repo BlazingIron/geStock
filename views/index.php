@@ -15,7 +15,6 @@
     // Pour afficher les erreurs php
     if (MODE_TEST == 1)
     {
-        echo ("Test activé<br>");
         error_reporting(E_ALL);
         ini_set("display_errors", 1);
     }
@@ -23,3 +22,12 @@
     {
         echo ("Test désactivé<br>");
     }
+
+    // Appel header général
+    require_once ("./langue/" . LANGUE_PAR_DEFAUT . "/header.php");
+
+    // Appel body général
+    require_once ("./langue/" . LANGUE_PAR_DEFAUT . "/body.php");
+
+    // Appel footer général
+    require_once ("./langue/" . LANGUE_PAR_DEFAUT . "/footer.php");

@@ -1,0 +1,13 @@
+
+:root 
+{
+    --custom-white: #CCCCCC;
+    --custom-black: #222222;
+    --custom-grey: #555555;
+}
+
+body
+{
+    color: var(--custom-white);
+    background: var(--custom-black);
+}
