@@ -10,6 +10,7 @@
 
         <!-- Title -->
         <title>GeStock</title>
+        <link rel="shortcut icon" href=<?php echo (IMG_FOLDER . "/favicon/favicon.png");?> type="image/x-icon">
 
         <!-- Style -->
         <!-- Bootstrap -->
@@ -26,11 +27,12 @@
         <script src=<?php echo (JS_FOLDER . "/jquery-3.4.1.js");?>></script>
     </head>
 
+<body>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
             <!-- Titre et logo-->
-            <a clsass="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">
                 <img src=<?php echo (IMG_FOLDER . "/logo.png");?> width="30" height="30" class="d-inline-block align-top">
                 GeStock
             </a>
@@ -49,4 +51,3 @@
             </div>
         </nav>
     </header>
-</html>

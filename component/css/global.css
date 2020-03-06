@@ -11,3 +11,10 @@ body
     color: var(--custom-white);
     background: var(--custom-black);
 }
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

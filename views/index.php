@@ -23,6 +23,10 @@
         echo ("Test désactivé<br>");
     }
 
+    // Sécurisation des vars reçus
+    $arrayVar = Controllers::secureArray($_REQUEST);
+    var_dump($arrayVar);
+
     // Appel header général
     require_once ("./langue/" . LANGUE_PAR_DEFAUT . "/header.php");
 
