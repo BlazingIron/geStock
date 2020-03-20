@@ -1,46 +1,48 @@
-
 <?php
+
+/**
+ * General controllers
+ * Get = select
+ * Post = insert
+ * Put = update
+ * Delete = delete
+ */
+
+//  ATTENTION : vérifier que le nom de la classe corresponde bien avec le nom du fichier (majuscules, singulier/pluriel, etc.) !!!
+class Controllers
+{
+    // ################### PARTIE SECURISATION #################################################### 
     /**
-     * General controllers
-     * Get = select
-     * Post = insert
-     * Put = update
-     * Delete = delete
+     * Sécurise les variables d'un tableau clé/valeur
+     *
+     * @param array => Tableau
+     * @return array => Tableau avec les valeur après sécurisation : supprime les balises HTML et PHP d'une chaine de caractère,
+     * remplace les espaces trops longs,
+     * traduit les entités HTML dans une chaine de caractères,
+     * enleve les espaces du début et de fin,
      */
-
-    class Controllers
+    public static function secureArray($array)
     {
-        // PARTIE SECURISATION
-        /**
-         * Sécurise les variables d'un tableau clé/valeur
-         *
-         * @param array => Tableau
-         * @return array => Tableau avec les valeur après sécurisation : supprime les balises HTML et PHP d'une chaine de caractère,
-         * remplace les espaces trops longs,
-         * traduit les entités HTML dans une chaine de caractères,
-         * enleve les espaces du début et de fin,
-         */
-        public static function secureArray($array)
-        {
-            $newArray = array();
-
-            foreach ($array as $key => $value)
-            {
-                // Si la valeur n'est pas un tableau
-                if (!is_array($value))
-                {
-                    $value = strip_tags($value); // Supprime les balises HTML et PHP d'une chaine de caractère
-                    $value = htmlspecialchars($value); // Traduit les entités HTML dans une chaine de caractères
-                    $value = Trim($value); // Enleve les espaces du début et de fin
-                    $newArray[$key] = $value; // Remplace dans le tableau l'ancienne valeur par la nouvelle
-                }
+        $newArray = array();
+        foreach ($array as $key => $value) {
+            // Si la valeur n'est pas un tableau
+            if (!is_array($value)) {
+                $value = strip_tags($value); // Supprime les balises HTML et PHP d'une chaine de caractère
+                $value = htmlspecialchars($value); // Traduit les entités HTML dans une chaine de caractères
+                $value = Trim($value); // Enleve les espaces du début et de fin
+                $newArray[$key] = $value; // Remplace dans le tableau l'ancienne valeur par la nouvelle
                 // Sinon on remet les valeurs telles quelles
-                else
-                {
-                    $newArray[$key] = $value;
-                }
+            } else {
+                $newArray[$key] = $value;
             }
-
-            return $newArray;
         }
+        return $newArray;
     }
+
+    public static function writingHello($maVar)
+    {
+        $returnText = "Bonjour " . $maVar . " !";
+
+        return $returnText;
+    }
+}

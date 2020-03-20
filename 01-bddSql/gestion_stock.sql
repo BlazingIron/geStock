@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 03 Mars 2020 à 12:41
+-- Généré le :  Mar 03 Mars 2020 à 12:45
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `gestion_stock`
 --
+CREATE DATABASE IF NOT EXISTS `gestion_stock` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `gestion_stock`;
 
 -- --------------------------------------------------------
 

@@ -1,3 +1,5 @@
 <?php
-    header ('Location: ../index.php');
-    exit();
+header('Location: /index.php');
+exit();
+
+// echo $_SERVER['PHP_SELF'];
