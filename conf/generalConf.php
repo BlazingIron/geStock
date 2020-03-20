@@ -20,7 +20,7 @@ define('LISTE_SERVEURS_PROD', array("192.168.1.1", "192.168.1.2", "192.168.1.3")
 // #############################################################################
 if ($_SERVER['SERVER_NAME'] == "localhost" or $_SERVER['REMOTE_ADDR'] == "127.0.0.1") {
     // Conf email support technique
-    define('EMAIL_SUPPORT_TECH', 'frouffet@gmail.com');
+    define('EMAIL_SUPPORT_TECH', 'meh@meh.meh');
     // Conf nom de domaine - Sert pour les communications
     define('WWW_NDD_GENERAL', 'localhost');
     // Conf Database
@@ -33,9 +33,9 @@ if ($_SERVER['SERVER_NAME'] == "localhost" or $_SERVER['REMOTE_ADDR'] == "127.0.
     // define('DATABASE_NAME_GESTION_STOCK_PROD', 'gestion_stock_prod'); // Bdd copie de prod
     // define('DATABASE_NAME_GESTION_STOCK_ARCHIVE', 'gestion_stock_archive'); // Bdd copie pour archivage de produits par exemple
     // Definition du path en local de la racine du projet
-    define('PATH_MACHINE', 'C:/Users/frede/Documents/UwAmp/www/gestock/');
+    define('PATH_MACHINE', 'E:/Programmes/UwAmp/www/geStock/');
     // Definition du path du host principal
-    define('HTTP_PATH_HOST_PRINCIPAL', 'http://localhost/gestock/');
+    define('HTTP_PATH_HOST_PRINCIPAL', 'http://localhost/geStock/');
     // Definition du path des views
     define('HTTP_PATH_VIEWS', 'views/');
     // Var de sécurité pour l'authentification
@@ -45,6 +45,8 @@ if ($_SERVER['SERVER_NAME'] == "localhost" or $_SERVER['REMOTE_ADDR'] == "127.0.
     // Nom des cookies
     define('COOKIE_RESTER_CONNECTE', "aqJkliç_çèKlikhjsysy012jiji5874"); // privilégier un nom aléatoire (pas random) à un nom en dur (ex. cookie_gestock).
     define('COOKIE_HTTPS_ONLY', FALSE);
+    // URL API cURL
+    define('URL_CURL_API_REST', HTTP_PATH_HOST_PRINCIPAL . 'api/rest/');
 
     // #############################################################################
     // EXT CONFIGURATION ###########################################################
@@ -81,6 +83,8 @@ if ($_SERVER['SERVER_NAME'] == "localhost" or $_SERVER['REMOTE_ADDR'] == "127.0.
     // Nom des cookies
     define('COOKIE_RESTER_CONNECTE', "aqJkliç_çèKlikhjsysy012jiji5874");
     define('COOKIE_HTTPS_ONLY', FALSE);
+    // URL API cURL
+    define('URL_CURL_API_REST', HTTP_PATH_HOST_PRINCIPAL . 'api/rest/');
 
     // #############################################################################
     // SI ERREUR ###################################################################
