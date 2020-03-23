@@ -20,7 +20,7 @@
     <!-- JQuery 1.12.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
     <!-- Feuille de style du projet -->
-    <link rel="stylesheet" href="component/css/style.css">
+    <link rel="stylesheet" href="/geStock/component/css/style.css">
 
     <!-- Titre -->
     <title>Accueil du Projet Commun</title>
@@ -36,7 +36,7 @@
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.js" integrity="sha256-1Cn7TdfHiMcEbTuku97ZRSGt2b3SvZftEIn68UMgHC8=" crossorigin="anonymous"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/component/img/favicon/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/geStock/component/img/favicon/favicon.png" type="image/x-icon">
 </head>
 
 <body>

@@ -2,12 +2,8 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col col-lg-2" style="border: solid 1px black; height: 90vh;">
-                Menu
-            </div>
-            <div class="col col-lg-10" style="border: solid 1px black; height: 90vh;">
-                Affichage stock
-            </div>
+            <?php require_once ("sideMenu.php"); ?>
+            <?php require_once ("tableView.php"); ?>
         </div>
     </div>
 </main>
