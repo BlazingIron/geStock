@@ -161,4 +161,17 @@ class Controllers
         curl_close($curl);
         return $result;
     }
+
+    /**
+     * Checks if a User is connected
+     */
+    static function verifConnexionUser()
+    {
+        if ((empty($_SESSION["idUser"]) || (!isset($_SESSION["idUser"]))))
+        {
+            throw new Exception("L'utilisateur n'est pas connecté");
+        }
+        
+        return $_SESSION["idUser"];
+    }
 }

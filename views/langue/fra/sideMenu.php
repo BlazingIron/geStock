@@ -1,11 +1,23 @@
 
 <nav class="navbar navbar-expand-md col-up-to-md-12 flex-column bg-light p-0">
     <div id="sideMenu" class="collapse navbar-collapse flex-column justify-content-start py-2">
-        <div class="w-100 px-1 border-bottom">
-            <img src="/geStock/component/img/avatar/Kappa.png" class="img-thumbnail rounded mr-1 float-left" height="60" width="60" alt="Avatar de l'utilisateur">
-            <p><b>admin</b></p>
-            <a class="mr-2 text-secondary" href="#">Profil</a><p class="d-inline-block text-secondary"><i class="fas fa-lock"></i> Déconnexion</p>
-        </div>
+
+        <?php if ($name != $nameGuest) { ?>
+            <!-- Menu si un utilisateur est connecté -->
+            <div class="w-100 px-1 border-bottom">
+                <img src="/geStock/component/img/avatar/Kappa.png" class="img-thumbnail rounded mr-1 float-left" height="60" width="60" alt="Avatar de l'utilisateur">
+                <p><b><?php echo $name ?></b></p>
+                <a class="mr-2 text-secondary" href="#">Profil</a><p class="d-inline-block text-secondary"><i class="fas fa-lock"></i> Déconnexion</p>
+            </div>
+        <?php } else { ?>
+            <!-- Menu si aucun utilisateur n'est connecté -->
+            <div class="w-100 px-1 border-bottom">
+                <img src="/geStock/component/img/avatar/Kappa.png" class="img-thumbnail rounded mr-1 float-left" height="60" width="60" alt="Avatar de l'utilisateur">
+                <p><b><?php $name ?></b></p>
+                <a class="mr-2 text-secondary" href="#">Connexion</a>
+            </div>
+        <?php } ?>
+
         <div class="d-flex flex-column mb-auto">
             <div class="text-center">
                 <h5 class="mt-2"><i class="fas fa-desktop"></i> Tableau de bord</h5>

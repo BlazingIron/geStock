@@ -20,28 +20,64 @@ if (MODE_TEST == 1) {
 
 // Sécurisation des variables reçues
 $arrayVar = Controllers::secureArray($_REQUEST);
-// var_dump($arrayVar);
 
-//test de l'API 
-$param = "?ctrl=getUsers";
-$resultGetCurl = Controllers::getCurlRest($param);
-$resultGetCurl = json_decode($resultGetCurl);
+//Récupération du nom de l'utilisateur
+$nameGuest = "Invité";
 
-if ($resultGetCurl->status == "failed")
+try
 {
-    die ("Une erreur est survenue, veuillez contacter le support technique.");
+    $name = Controllers::verifConnexionUser();
 }
-elseif ($resultGetCurl->status == "success")
+catch (Exception $e)
 {
-    echo "<pre>";
-    var_dump($resultGetCurl->result);   
-    echo "</pre>";
-    //echo $resultGetCurl->result->email;
+    $name = $nameGuest;
 }
-else
-{
-    die("Erreur critique.");
-}
+
+
+
+// Le formulaire permet delancer une demande d'authentification
+
+// Cette demande est traité par index.php dans views
+
+// Detecter si le formulaire a été lancer (if action=="auth")
+
+// Detecter si les variables envoyé par le formulaire na sont pas vide  (email et pass pas vide)
+
+
+// Appeler un controller "verifUserIfExist" qui sera dans Controllers.php de l'application
+    //  ==> le controller "verifUserIfExist" va appeler l'API pour récupérer la liste des users,
+    // vous parcourez la liste des resultats
+    // et il va comparer les resultats pour vérifier si il trouve bien  : email + mot de passe.
+    // si il trouve email et pass
+    // va renvoyer les données de l'utilsateur 
+    // $_SESSION["idUser"] = id
+    // $_SESSION["nameUser"]
+    // $_SESSION["lastNameUser"]
+    // $_SESSION["emailUser"]
+    // $_SESSION["typeUser"]
+
+
+
+// //test de l'API 
+// $param = "?ctrl=getUsers";
+// $resultGetCurl = Controllers::getCurlRest($param);
+// $resultGetCurl = json_decode($resultGetCurl);
+
+// if ($resultGetCurl->status == "failed")
+// {
+//     die ("Une erreur est survenue, veuillez contacter le support technique.");
+// }
+// elseif ($resultGetCurl->status == "success")
+// {
+//     echo "<pre>";
+//     var_dump($resultGetCurl->result);   
+//     echo "</pre>";
+//     //echo $resultGetCurl->result->email;
+// }
+// else
+// {
+//     die("Erreur critique.");
+// }
 
 // Appel header Général
 require_once("langue/fra/header.php");

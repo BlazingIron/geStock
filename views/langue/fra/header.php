@@ -45,7 +45,9 @@
             <a class="navbar-brand" href="#home"><i class="fas fa-home"></i>
                 <img src="../component/img/logo.png" width="45%" class="d-inline-block align-top" alt="logo">
             </a>
-            <span class="text-white"><?php echo Controllers::writingHello("Chameau"); ?></span>
+            <span class="text-white">
+                <?php echo Controllers::writingHello($name); ?>
+            </span>
 
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Connexion</button>
